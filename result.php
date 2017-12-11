@@ -3,6 +3,7 @@
     use Leth\IPAddress\IP, Leth\IPAddress\IPv4, Leth\IPAddress\IPv6;
     require 'functions.php';
     $errorMSG = "";
+    $cidr = NULL;
     if (empty($_POST['ip']) || empty($_POST['ipv_format']) ){
         if (empty($_POST['ip'])) 
             $errorMSG .= "<li>IP is required</li>";
@@ -26,7 +27,7 @@
                 $cidr = $_POST['cidr'];}
             else{
                  $class_bool = true;
-                $cidr =findReseverd($ipaddress);
+                 $cidr =findReseverd($ipaddress);
             }
 
             if (!empty($_POST['cidr']) && ($_POST['cidr']<10 || $_POST['cidr']>30)) {
@@ -44,8 +45,8 @@
                 $cidr = 64;
             }
 
-            if (!empty($_POST['cidr']) && ($_POST['cidr']>64)) {
-            $errorMSG = "<li>Please enter less than 64</li>";
+            if (!empty($_POST['cidr']) && ($_POST['cidr']<64)) {
+            $errorMSG = "<li>Please enter more than 64</li>";
         }   
 
         }  
@@ -54,7 +55,10 @@
 
     if(empty($errorMSG)){
         $ipaddress = $_POST['ip'];
-        $net_addr = IP\NetworkAddress::factory($ipaddress,$cidr);
+        if ($cidr == NULL) {
+            $net_addr = IP\NetworkAddress::factory($ipaddress);
+        }else
+            $net_addr = IP\NetworkAddress::factory($ipaddress,$cidr);
         if ($_POST['ipv_format'] == "ipv4") {
             $broadcast_address = $net_addr->get_broadcast_address();
             $sunet_mask = $net_addr->get_subnet_mask();

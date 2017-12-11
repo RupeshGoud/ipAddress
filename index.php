@@ -51,23 +51,36 @@
       <form action="index.php" method="POST" role="form" class="form-horizontal" id="myForm" data-toggle="validator">
         <div class="row form-group">
           <div class="col sm-8">
-              <h3 class="text-muted"><label>Choose IPV Format : </label><h3>
-              <label for="paperRadios1" class="paper-radio">
-                <!-- <input type="radio" name="paperRadios" id="paperRadios1" value="ipv4" onChange="findselected()"> <span>IPV4<span> -->
-                  <input type="radio" name="paperRadios" id="paperRadios1" value="ipv4"> <span>IPV4<span>
-              </label>
-              <label for="paperRadios2" class="paper-radio">
-                <!-- <input type="radio" name="paperRadios" id="paperRadios2" value="ipv6" onChange="findselected()"> <span>IPV6<span> -->
-                   <input type="radio" name="paperRadios" id="paperRadios2" value="ipv6"> <span>IPV6<span>
-              </label>
-              <h3 class="text-muted"><label>Enter IP Address : </label><h3>
-              <div class="row">
-                <input class="input-block col sm-8" type="text" placeholder="Enter IP Address" name="ipaddress" id="ipaddress" required>
-                <input class="input-block col sm-4" type="text" placeholder="Enter CIDR(optional)" name="cidr" id="cidr">
+            <div class="row">
+               <div class="col sm-8">
+                <h3 class="text-muted"><label>Choose IPV Format : </label><h3>
+                <label for="paperRadios1" class="paper-radio">
+                  <!-- <input type="radio" name="paperRadios" id="paperRadios1" value="ipv4" onChange="findselected()"> <span>IPV4<span> -->
+                    <input type="radio" name="paperRadios" id="paperRadios1" value="ipv4"> <span>IPV4<span>
+                </label>
+                <label for="paperRadios2" class="paper-radio">
+                  <!-- <input type="radio" name="paperRadios" id="paperRadios2" value="ipv6" onChange="findselected()"> <span>IPV6<span> -->
+                     <input type="radio" name="paperRadios" id="paperRadios2" value="ipv6"> <span>IPV6<span>
+                </label>
+
               </div>
+              <div class="col sm-4">
+                <iframe width="480" height="315" src="https://www.youtube.com/embed/8zEVA-Bxs-0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+              </div>
+            </div>
+             
+
+                <h3 class="text-muted"><label>Enter IP Address : </label><h3>
+                <div class="row">
+                  <input class="input-block col sm-8" type="text" placeholder="Enter IP Address" name="ipaddress" id="ipaddress" required>
+                  <input class="input-block col sm-4" type="text" placeholder="Enter CIDR(optional)" name="cidr" id="cidr">
+                </div>
+                
+                <button popover="Submit to validate your IP" popover-position="top" type="submit" id="submit">SUBMIT</button>
+             
               
-              <button popover="Submit to validate your IP" popover-position="top" type="submit" id="submit">SUBMIT</button>
           </div>
+          
         </div>
       </form>
       <div class="ip-result"></div>
