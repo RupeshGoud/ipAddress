@@ -2,6 +2,8 @@
   require_once 'vendor/autoload.php';
   use Leth\IPAddress\IP, Leth\IPAddress\IPv4, Leth\IPAddress\IPv6;
   require 'functions.php';
+   //$ipaddress = getHostByName(getHostName());
+
   $ipaddress = getRealIpAddr() ;
 ?>
 <html>
@@ -65,7 +67,7 @@
 
               </div>
               <div class="col sm-4">
-                <iframe width="480" height="315" src="https://www.youtube.com/embed/8zEVA-Bxs-0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                <iframe width="360" height="240" src="https://www.youtube.com/embed/8zEVA-Bxs-0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
               </div>
             </div>
              

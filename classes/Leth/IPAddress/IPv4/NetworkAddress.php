@@ -65,20 +65,20 @@ class NetworkAddress extends \Leth\IPAddress\IP\NetworkAddress
 	{
 		if ($this->cidr > 24)
 		{
-			return '1/'.pow(2, $this->cidr - 24).' C';
+			return ' C';
 		}
 		elseif ($this->cidr > 16)
 		{
-			return pow(2, 24 - $this->cidr).' C';
+			return ' C';
 
 		}
 		elseif ($this->cidr > 8)
 		{
-			return pow(2, 16 - $this->cidr).' B';
+			return ' B';
 		}
 		else
 		{
-			return pow(2, 8 - $this->cidr).' A';
+			return ' A';
 		}
 	}
 
