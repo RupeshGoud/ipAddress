@@ -100,14 +100,14 @@
             
         }else{
             if (!empty($_POST['cidr']) && ($_POST['cidr']==128)) {
-                $msg = "This is the loopback Address";
-             }
+            $msg = "This is the loopback Address";
+            }
             else{
                 $sunet_mask = $net_addr->get_subnet_mask();
                 $msg = "<li>Sunet Mask ".$sunet_mask."</li>";
             }
             
-       
+        }
         //$res = array("Broadcast address"=>$broadcast_address, "Sunet Mask"=>$sunet_mask, "Class"=>$class);
     	echo json_encode(['code'=>200, 'msg'=>$msg]);
     	exit;
