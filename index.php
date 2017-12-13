@@ -2,9 +2,9 @@
   require_once 'vendor/autoload.php';
   use Leth\IPAddress\IP, Leth\IPAddress\IPv4, Leth\IPAddress\IPv6;
   require 'functions.php';
-   //$ipaddress = getHostByName(getHostName());
+   $ipaddress = getHostByName(getHostName());
 
-  $ipaddress = getRealIpAddr() ;
+  //$ipaddress = getRealIpAddr() ;  //for production
 ?>
 <html>
   <head>
